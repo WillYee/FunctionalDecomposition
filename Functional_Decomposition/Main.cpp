@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <memory>
 #include <pthread.h>
 
 #include "DeerThread.h"
