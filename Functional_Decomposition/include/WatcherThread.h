@@ -26,13 +26,13 @@ private:
 	// inherited, but unused, must be declared here becuase it's a pure virtual
 	void compute_tmp_variables();
 
-	const double AVG_PRECIP_PER_MONTH = 6.0;
-	const double AMP_PRECIP_PER_MONTH = 6.0;
-	const double RANDOM_PRECIP        = 2.0;
+	const static double AVG_PRECIP_PER_MONTH;
+	const static double AMP_PRECIP_PER_MONTH;
+	const static double RANDOM_PRECIP;
 
-	const double AVG_TEMP    = 50.0;
-	const double AMP_TEMP    = 20.0;
-	const double RANDOM_TEMP = 10.0;
+	const static double AVG_TEMP;
+	const static double AMP_TEMP;
+	const static double RANDOM_TEMP;
 
 };
 

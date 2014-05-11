@@ -3,6 +3,14 @@
 #include <cmath>
 #include <iostream>
 
+const double WatcherThread::AVG_PRECIP_PER_MONTH = 6.0;
+const double WatcherThread::AMP_PRECIP_PER_MONTH = 6.0;
+const double WatcherThread::RANDOM_PRECIP = 2.0;
+
+const double WatcherThread::AVG_TEMP = 50.0;
+const double WatcherThread::AMP_TEMP = 20.0;
+const double WatcherThread::RANDOM_TEMP = 10.0;
+
 WatcherThread::WatcherThread(pthread_barrier_t& computing_barrier_in,
 	pthread_barrier_t& assignment_barrier_in,
 	pthread_barrier_t& printing_barrier_in,
