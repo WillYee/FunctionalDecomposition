@@ -117,18 +117,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DeerThread.h" />
-    <ClInclude Include="EntityThread.h" />
-    <ClInclude Include="GrainThread.h" />
-    <ClInclude Include="WatcherThread.h" />
+    <ClInclude Include="Entities\DeerThread.h" />
+    <ClInclude Include="Entities\EntityThread.h" />
+    <ClInclude Include="Entities\GrainThread.h" />
+    <ClInclude Include="Entities\WatcherThread.h" />
     <ClInclude Include="WorldState.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DeerThread.cpp" />
-    <ClCompile Include="EntityThread.cpp" />
-    <ClCompile Include="GrainThread.cpp" />
+    <ClCompile Include="Entities\DeerThread.cpp" />
+    <ClCompile Include="Entities\EntityThread.cpp" />
+    <ClCompile Include="Entities\GrainThread.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="WatcherThread.cpp" />
+    <ClCompile Include="Entities\WatcherThread.cpp" />
     <ClCompile Include="WorldState.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

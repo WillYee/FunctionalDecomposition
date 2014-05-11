@@ -18,16 +18,16 @@
     <ClInclude Include="WorldState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EntityThread.h">
+    <ClInclude Include="Entities\DeerThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DeerThread.h">
+    <ClInclude Include="Entities\EntityThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GrainThread.h">
+    <ClInclude Include="Entities\GrainThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WatcherThread.h">
+    <ClInclude Include="Entities\WatcherThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,16 +38,16 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DeerThread.cpp">
+    <ClCompile Include="Entities\EntityThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GrainThread.cpp">
+    <ClCompile Include="Entities\GrainThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WatcherThread.cpp">
+    <ClCompile Include="Entities\WatcherThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EntityThread.cpp">
+    <ClCompile Include="Entities\DeerThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

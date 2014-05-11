@@ -2,9 +2,9 @@
 #include <vector>
 #include <pthread.h>
 
-#include "DeerThread.h"
-#include "WatcherThread.h"
-#include "GrainThread.h"
+#include "Entities/DeerThread.h"
+#include "Entities/WatcherThread.h"
+#include "Entities/GrainThread.h"
 #include "WorldState.h"
 
 static const int NUM_THREADS = 3;
