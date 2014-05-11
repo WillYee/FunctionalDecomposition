@@ -1,4 +1,5 @@
 #include "../include/DeerThread.h"
+#include "../include/HunterThread.h"
 #include <iostream>
 
 DeerThread::DeerThread(pthread_barrier_t& computing_barrier_in,
@@ -30,6 +31,37 @@ void DeerThread::compute_tmp_variables()
 		num_of_deer_tmp = (int)num_deer - 1;
 
 		if (num_of_deer_tmp < 1)
+		{
+			num_of_deer_tmp = 0;
+		}
+	}
+
+	// Determine the number of deers hunted due to hunters
+	if (num_of_deer_tmp > HunterThread::HUNTER_KILL_LIMIT)
+	{
+		int deers_hunted = 0;
+		int num_hunters = current_state.num_hunters;
+		
+		// Calculate the number of deers hunted based off of a randomly generated number
+		// and the HunterThread::HUNTER_KILL_CHANCE
+		for (int i = 0; i < num_hunters; i++)
+		{
+			double random_number = ranf(HunterThread::HUNTER_MIN_RAND, HunterThread::HUNTER_MAX_RAND);
+			if (random_number < (HunterThread::HUNTER_MAX_RAND * HunterThread::HUNTER_KILL_CHANCE))
+			{
+				deers_hunted++;
+			}
+		}
+
+		if (deers_hunted > HunterThread::HUNTER_KILL_LIMIT)
+		{
+			deers_hunted = HunterThread::HUNTER_KILL_LIMIT;
+		}
+
+		num_of_deer_tmp -= deers_hunted;
+
+		// Cap number of deers to 0
+		if (num_of_deer_tmp < 0)
 		{
 			num_of_deer_tmp = 0;
 		}

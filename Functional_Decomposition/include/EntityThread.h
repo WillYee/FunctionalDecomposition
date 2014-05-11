@@ -27,6 +27,9 @@ protected:
 	// WorldState
 	virtual void update_world_state() = 0;
 
+	// Generate a random double within this range
+	double ranf(double low, double high);
+
 	pthread_barrier_t& computing_barrier; // WatcherThread will never use this!!!
 	pthread_barrier_t& assignment_barrier;
 	pthread_barrier_t& printing_barrier;

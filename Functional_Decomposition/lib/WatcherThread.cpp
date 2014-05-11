@@ -1,8 +1,7 @@
 #define _USE_MATH_DEFINES
 #include "../include/WatcherThread.h"
-
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 WatcherThread::WatcherThread(pthread_barrier_t& computing_barrier_in,
 	pthread_barrier_t& assignment_barrier_in,
@@ -25,9 +24,9 @@ void WatcherThread::compute_tmp_variables()
 void WatcherThread::update_world_state()
 {
 	// Increment the month, and possibly the year
-	if (current_state.num_month >= 11)
+	if (current_state.num_month >= current_state.DECEMBER)
 	{
-		current_state.num_month = 0;
+		current_state.num_month = current_state.JANUARY;
 		current_state.now_year++;
 	}
 	else
@@ -64,11 +63,5 @@ void WatcherThread::run()
 
 void WatcherThread::print()
 {
-	std::cout << current_state.now_temp << ", " << current_state.now_precip << ", " << current_state.num_deer << ", " << current_state.now_height << std::endl;
-}
-
-double WatcherThread::ranf(double low, double high) 
-{
-	double r = (double)rand(); // 0 - RAND_MAX
-	return(low + r * (high - low) / (double)RAND_MAX);
+	std::cout << current_state.now_temp << ", " << current_state.now_precip << ", " << current_state.num_deer << ", " << current_state.now_height << ", " << current_state.num_hunters << std::endl;
 }

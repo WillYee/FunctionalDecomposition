@@ -5,10 +5,11 @@
 #include "include/DeerThread.h"
 #include "include/WatcherThread.h"
 #include "include/GrainThread.h"
+#include "include/HunterThread.h"
 #include "include/WorldState.h"
 
-static const int NUM_THREADS = 3;
-static const int NUM_COMPUTE_THREADS = 2;
+static const int NUM_THREADS = 4;
+static const int NUM_COMPUTE_THREADS = 3;
 
 // Bare function to call base class run function
 void* entity_start_thread(void *ptr)
@@ -57,6 +58,7 @@ int main(int argc, char* argv[])
 	pthread_t deer_thread;
 	pthread_t grain_thread;
 	pthread_t watcher_thread;
+	pthread_t hunter_thread;
 
 	// Declare our barriers
 	pthread_barrier_t assign_barrier;
@@ -75,8 +77,9 @@ int main(int argc, char* argv[])
 	DeerThread deer(computing_barrier, assign_barrier, print_barrier, current_state);
 	WatcherThread watcher(computing_barrier, assign_barrier, print_barrier, current_state);
 	GrainThread grain(computing_barrier, assign_barrier, print_barrier, current_state);
+	HunterThread hunter(computing_barrier, assign_barrier, print_barrier, current_state);
 	
-	std::cout << "temperature, precipatation, number of deer, height of grain" << std::endl;
+	std::cout << "temperature, precipatation, number of deer, height of grain, number of hunters" << std::endl;
 
 	// Begin spinning off threads
 	int status = pthread_create(&deer_thread, nullptr, entity_start_thread, &deer);
@@ -87,15 +90,20 @@ int main(int argc, char* argv[])
 
 		if (check_status(status) == false)
 		{
-			status = pthread_create(&watcher_thread, nullptr, entity_start_thread, &watcher);
+			status = pthread_create(&hunter_thread, nullptr, entity_start_thread, &hunter);
 
 			if (check_status(status) == false)
 			{
-				// Join the watcher thread, kill all others
-				pthread_join(watcher_thread, nullptr);
+				status = pthread_create(&watcher_thread, nullptr, entity_start_thread, &watcher);
 
-				pthread_cancel(deer_thread);
-				pthread_cancel(grain_thread);
+				if (check_status(status) == false)
+				{
+					// Join the watcher thread, kill all others
+					pthread_join(watcher_thread, nullptr);
+
+					pthread_cancel(deer_thread);
+					pthread_cancel(grain_thread);
+				}
 			}
 		}
 	}

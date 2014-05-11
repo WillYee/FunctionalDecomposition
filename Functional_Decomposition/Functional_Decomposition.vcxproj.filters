@@ -30,6 +30,9 @@
     <ClInclude Include="include\WorldState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\HunterThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lib\WorldState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\HunterThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

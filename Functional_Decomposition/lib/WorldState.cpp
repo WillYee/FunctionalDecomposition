@@ -2,6 +2,7 @@
 
 WorldState::WorldState()
 	: num_deer(1)
+	, num_hunters(1)
 	, num_month(11)
 	, now_year(2013)
 	, now_height(1.0)

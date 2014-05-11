@@ -23,9 +23,6 @@ private:
 	// Update the month/year and the temperature and precipitation
 	void update_world_state();
 
-	// Generate a random double within this range
-	double ranf(double low, double high);
-
 	// inherited, but unused, must be declared here becuase it's a pure virtual
 	void compute_tmp_variables();
 
