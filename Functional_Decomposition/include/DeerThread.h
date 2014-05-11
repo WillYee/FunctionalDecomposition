@@ -1,7 +1,7 @@
 #pragma once
 #ifndef DEERTHREAD_H
 
-#include "EntityThread.h"
+#include "../include/EntityThread.h"
 
 // This class will manage the information regarding the deer population in the world
 class DeerThread : public EntityThread

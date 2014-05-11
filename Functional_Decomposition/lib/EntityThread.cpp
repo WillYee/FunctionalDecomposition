@@ -1,4 +1,4 @@
-#include "EntityThread.h"
+#include "../include/EntityThread.h"
 
 
 EntityThread::EntityThread(pthread_barrier_t& computing_barrier_in,

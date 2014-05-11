@@ -2,10 +2,10 @@
 #include <vector>
 #include <pthread.h>
 
-#include "Entities/DeerThread.h"
-#include "Entities/WatcherThread.h"
-#include "Entities/GrainThread.h"
-#include "WorldState.h"
+#include "include/DeerThread.h"
+#include "include/WatcherThread.h"
+#include "include/GrainThread.h"
+#include "include/WorldState.h"
 
 static const int NUM_THREADS = 3;
 static const int NUM_COMPUTE_THREADS = 2;

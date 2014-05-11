@@ -2,7 +2,7 @@
 #ifndef ENTITYTHREAD_H
 
 #include <pthread.h>
-#include "../WorldState.h"
+#include "WorldState.h"
 
 class EntityThread
 {

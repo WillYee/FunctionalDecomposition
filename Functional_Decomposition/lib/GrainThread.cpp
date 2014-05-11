@@ -1,4 +1,4 @@
-#include "GrainThread.h"
+#include "../include/GrainThread.h"
 #include <cmath>
 
 GrainThread::GrainThread(pthread_barrier_t& computing_barrier_in,

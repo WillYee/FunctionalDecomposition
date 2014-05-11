@@ -1,5 +1,5 @@
 #define _USE_MATH_DEFINES
-#include "WatcherThread.h"
+#include "../include/WatcherThread.h"
 
 #include <iostream>
 #include <cmath>

@@ -1,4 +1,4 @@
-#include "DeerThread.h"
+#include "../include/DeerThread.h"
 #include <iostream>
 
 DeerThread::DeerThread(pthread_barrier_t& computing_barrier_in,

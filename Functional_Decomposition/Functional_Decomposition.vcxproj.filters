@@ -15,39 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WorldState.h">
+    <ClInclude Include="include\DeerThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\DeerThread.h">
+    <ClInclude Include="include\EntityThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\EntityThread.h">
+    <ClInclude Include="include\GrainThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\GrainThread.h">
+    <ClInclude Include="include\WatcherThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\WatcherThread.h">
+    <ClInclude Include="include\WorldState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WorldState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\EntityThread.cpp">
+    <ClCompile Include="lib\DeerThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\GrainThread.cpp">
+    <ClCompile Include="lib\EntityThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\WatcherThread.cpp">
+    <ClCompile Include="lib\GrainThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\DeerThread.cpp">
+    <ClCompile Include="lib\WatcherThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\WorldState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

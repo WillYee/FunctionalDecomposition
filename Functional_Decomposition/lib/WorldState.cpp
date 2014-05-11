@@ -1,4 +1,4 @@
-#include "WorldState.h"
+#include "../include/WorldState.h"
 
 WorldState::WorldState()
 	: num_deer(1)

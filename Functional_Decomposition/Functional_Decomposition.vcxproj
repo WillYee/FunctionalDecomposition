@@ -117,19 +117,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Entities\DeerThread.h" />
-    <ClInclude Include="Entities\EntityThread.h" />
-    <ClInclude Include="Entities\GrainThread.h" />
-    <ClInclude Include="Entities\WatcherThread.h" />
-    <ClInclude Include="WorldState.h" />
+    <ClInclude Include="include\DeerThread.h" />
+    <ClInclude Include="include\EntityThread.h" />
+    <ClInclude Include="include\GrainThread.h" />
+    <ClInclude Include="include\WatcherThread.h" />
+    <ClInclude Include="include\WorldState.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Entities\DeerThread.cpp" />
-    <ClCompile Include="Entities\EntityThread.cpp" />
-    <ClCompile Include="Entities\GrainThread.cpp" />
+    <ClCompile Include="lib\DeerThread.cpp" />
+    <ClCompile Include="lib\EntityThread.cpp" />
+    <ClCompile Include="lib\GrainThread.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Entities\WatcherThread.cpp" />
-    <ClCompile Include="WorldState.cpp" />
+    <ClCompile Include="lib\WatcherThread.cpp" />
+    <ClCompile Include="lib\WorldState.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
