@@ -24,9 +24,9 @@ void WatcherThread::compute_tmp_variables()
 void WatcherThread::update_world_state()
 {
 	// Increment the month, and possibly the year
-	if (current_state.num_month >= current_state.DECEMBER)
+	if (current_state.num_month >= WorldState::DECEMBER)
 	{
-		current_state.num_month = current_state.JANUARY;
+		current_state.num_month = WorldState::JANUARY;
 		current_state.now_year++;
 	}
 	else

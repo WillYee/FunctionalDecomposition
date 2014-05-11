@@ -1,6 +1,11 @@
 #include "../include/GrainThread.h"
 #include <cmath>
 
+const double GrainThread::GRAIN_GROWS_PER_MONTH = 8.0;
+const double GrainThread::ONE_DeerThread_EATS_PER_MONTH = 0.5;
+const double GrainThread::MIDTEMP = 40.0;
+const double GrainThread::MIDPRECIP = 10.0;
+
 GrainThread::GrainThread(pthread_barrier_t& computing_barrier_in,
 	pthread_barrier_t& assignment_barrier_in,
 	pthread_barrier_t& printing_barrier_in,

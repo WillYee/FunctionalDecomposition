@@ -26,10 +26,10 @@ private:
 
 	void update_world_state();
 
-	const double GRAIN_GROWS_PER_MONTH		   = 8.0;
-	const double ONE_DeerThread_EATS_PER_MONTH = 0.5;
-	const double MIDTEMP					   = 40.0;
-	const double MIDPRECIP					   = 10.0;
+	const static double GRAIN_GROWS_PER_MONTH;
+	const static double ONE_DeerThread_EATS_PER_MONTH;
+	const static double MIDTEMP;
+	const static double MIDPRECIP;
 };
 
 #endif
