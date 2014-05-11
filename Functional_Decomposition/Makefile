@@ -1,6 +1,7 @@
 default: all
 
 all:
+	rm -rf build
 	mkdir build
 	g++ -std=c++0x -O3 -c lib/DeerThread.cpp -o build/DeerThread.o
 	g++ -std=c++0x -O3 -c lib/EntityThread.cpp -o build/EntityThread.o
