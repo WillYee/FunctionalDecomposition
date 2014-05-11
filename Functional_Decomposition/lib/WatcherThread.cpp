@@ -14,11 +14,12 @@ WatcherThread::WatcherThread(pthread_barrier_t& computing_barrier_in,
 
 WatcherThread::~WatcherThread()
 {
+	// Nothing needs to be freed
 }
 
 void WatcherThread::compute_tmp_variables()
 {
-	// Nothing to compute in temp variables
+	// Inherited but unused, nothing to compute
 }
 
 void WatcherThread::update_world_state()
@@ -35,12 +36,12 @@ void WatcherThread::update_world_state()
 	}
 
 	// Calculate the new temperature and precipitation for the month
+	double ang    = (30.*(double) current_state.num_month + 15.) * (M_PI / 180.);
 
-	double ang = (30.*(double) current_state.num_month + 15.) * (M_PI / 180.);
-	double temp = AVG_TEMP - AMP_TEMP * cos(ang);
+	double temp   = AVG_TEMP - AMP_TEMP * cos(ang);
 	double precip = AVG_PRECIP_PER_MONTH + AMP_PRECIP_PER_MONTH * sin(ang);
 
-	current_state.now_temp = temp + ranf(-RANDOM_TEMP, RANDOM_TEMP);
+	current_state.now_temp   = temp + ranf(-RANDOM_TEMP, RANDOM_TEMP);
 	current_state.now_precip = precip + ranf(-RANDOM_PRECIP, RANDOM_PRECIP);
 		
 	if (current_state.now_precip < 0.)
@@ -66,12 +67,8 @@ void WatcherThread::print()
 	std::cout << current_state.now_temp << ", " << current_state.now_precip << ", " << current_state.num_deer << ", " << current_state.now_height << std::endl;
 }
 
-// This was taken from http://stackoverflow.com/a/5289624 
-// since ranf was not provided to us on the class website
-double WatcherThread::ranf(double a, double b) 
+double WatcherThread::ranf(double low, double high) 
 {
-	double random = ((double)rand()) / (double)RAND_MAX;
-	double diff = b - a;
-	double r = random * diff;
-	return a + r;
+	double r = (double)rand(); // 0 - RAND_MAX
+	return(low + r * (high - low) / (double)RAND_MAX);
 }

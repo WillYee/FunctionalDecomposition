@@ -3,7 +3,7 @@
 
 #include "EntityThread.h"
 
-class WatcherThread : EntityThread
+class WatcherThread : public EntityThread
 {
 public:
 	WatcherThread(pthread_barrier_t& computing_barrier_in,
@@ -17,18 +17,24 @@ public:
 
 private:
 
+	// Print out the current WorldState, using CSV
 	void print();
-	void compute_tmp_variables();
+
+	// Update the month/year and the temperature and precipitation
 	void update_world_state();
 
-	double ranf(double a, double b);
+	// Generate a random double within this range
+	double ranf(double low, double high);
+
+	// inherited, but unused, must be declared here becuase it's a pure virtual
+	void compute_tmp_variables();
 
 	const double AVG_PRECIP_PER_MONTH = 6.0;
 	const double AMP_PRECIP_PER_MONTH = 6.0;
-	const double RANDOM_PRECIP = 2.0;
+	const double RANDOM_PRECIP        = 2.0;
 
-	const double AVG_TEMP = 50.0;
-	const double AMP_TEMP = 20.0;
+	const double AVG_TEMP    = 50.0;
+	const double AMP_TEMP    = 20.0;
 	const double RANDOM_TEMP = 10.0;
 
 };

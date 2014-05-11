@@ -19,13 +19,18 @@ public:
 
 protected:
 
+	// Pure virtual method that will copy certain WorldState members and calculate new values and store them
+	// in their own class memeber
 	virtual void compute_tmp_variables() = 0;
+
+	// Pure virtual method that  will copy out the newly calculated value back into the 
+	// WorldState
 	virtual void update_world_state() = 0;
 
 	pthread_barrier_t& computing_barrier; // WatcherThread will never use this!!!
 	pthread_barrier_t& assignment_barrier;
 	pthread_barrier_t& printing_barrier;
-	WorldState&			   current_state;
+	WorldState&		   current_state;
 
 private:
 

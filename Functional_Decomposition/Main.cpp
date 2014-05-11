@@ -17,7 +17,7 @@ void* entity_start_thread(void *ptr)
 	EntityThread* argument  = reinterpret_cast<EntityThread*>(ptr);
 	argument->run();
 	
-	pthread_exit(NULL);
+	pthread_exit(nullptr);
 
 	// Visual Studio complains unless I provide this return statement
 	return 0;
@@ -64,9 +64,9 @@ int main(int argc, char* argv[])
 	pthread_barrier_t print_barrier;
 
 	// Initialize all our barriers
-	pthread_barrier_init(&assign_barrier, NULL, NUM_THREADS);
-	pthread_barrier_init(&computing_barrier, NULL, NUM_COMPUTE_THREADS);
-	pthread_barrier_init(&print_barrier, NULL, NUM_THREADS);
+	pthread_barrier_init(&assign_barrier, nullptr, NUM_THREADS);
+	pthread_barrier_init(&computing_barrier, nullptr, NUM_COMPUTE_THREADS);
+	pthread_barrier_init(&print_barrier, nullptr, NUM_THREADS);
 
 	// Set up the state of the world and initialize values
 	WorldState current_state;
@@ -79,20 +79,20 @@ int main(int argc, char* argv[])
 	std::cout << "temperature, precipatation, number of deer, height of grain" << std::endl;
 
 	// Begin spinning off threads
-	int status = pthread_create(&deer_thread, NULL, entity_start_thread, &deer);
+	int status = pthread_create(&deer_thread, nullptr, entity_start_thread, &deer);
 
 	if (check_status(status) == false)
 	{
-		status = pthread_create(&grain_thread, NULL, entity_start_thread, &grain);
+		status = pthread_create(&grain_thread, nullptr, entity_start_thread, &grain);
 
 		if (check_status(status) == false)
 		{
-			status = pthread_create(&watcher_thread, NULL, entity_start_thread, &watcher);
+			status = pthread_create(&watcher_thread, nullptr, entity_start_thread, &watcher);
 
 			if (check_status(status) == false)
 			{
 				// Join the watcher thread, kill all others
-				pthread_join(watcher_thread, NULL);
+				pthread_join(watcher_thread, nullptr);
 
 				pthread_cancel(deer_thread);
 				pthread_cancel(grain_thread);

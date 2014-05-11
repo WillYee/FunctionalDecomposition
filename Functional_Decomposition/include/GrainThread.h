@@ -18,17 +18,18 @@ private:
 	GrainThread(const GrainThread&);
 	GrainThread& operator=(const GrainThread&);
 
-	double height_tmp; // Grain height in inches
-
-	const double GRAIN_GROWS_PER_MONTH		   = 8.0;
-	const double ONE_DeerThread_EATS_PER_MONTH = 0.5;
-	const double MIDTEMP					   = 40.0;
-	const double MIDPRECIP					   = 10.0;
+	// Grain height in inches
+	double height_tmp;
 
 	// Calculate the new height of the grain
 	void compute_tmp_variables();
 
 	void update_world_state();
+
+	const double GRAIN_GROWS_PER_MONTH		   = 8.0;
+	const double ONE_DeerThread_EATS_PER_MONTH = 0.5;
+	const double MIDTEMP					   = 40.0;
+	const double MIDPRECIP					   = 10.0;
 };
 
 #endif
