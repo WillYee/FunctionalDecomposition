@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
 	// Set up the state of the world and initialize values
 	WorldState current_state;
 
-	// Declare our three entity threads
+	// Declare our four entity threads
 	DeerThread deer(computing_barrier, assign_barrier, print_barrier, current_state);
 	WatcherThread watcher(computing_barrier, assign_barrier, print_barrier, current_state);
 	GrainThread grain(computing_barrier, assign_barrier, print_barrier, current_state);
