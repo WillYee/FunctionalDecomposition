@@ -8,7 +8,7 @@
 #include "include/HunterThread.h"
 #include "include/WorldState.h"
 
-static const int NUM_THREADS = 4;
+static const int NUM_THREADS 	     = 4;
 static const int NUM_COMPUTE_THREADS = 3;
 
 // Bare function to call base class run function
@@ -74,10 +74,10 @@ int main(int argc, char* argv[])
 	WorldState current_state;
 
 	// Declare our four entity threads
-	DeerThread deer(computing_barrier, assign_barrier, print_barrier, current_state);
+	DeerThread    deer(computing_barrier, assign_barrier, print_barrier, current_state);
 	WatcherThread watcher(computing_barrier, assign_barrier, print_barrier, current_state);
-	GrainThread grain(computing_barrier, assign_barrier, print_barrier, current_state);
-	HunterThread hunter(computing_barrier, assign_barrier, print_barrier, current_state);
+	GrainThread   grain(computing_barrier, assign_barrier, print_barrier, current_state);
+	HunterThread  hunter(computing_barrier, assign_barrier, print_barrier, current_state);
 	
 	std::cout << "temperature, precipatation, number of deer, height of grain, number of hunters" << std::endl;
 
