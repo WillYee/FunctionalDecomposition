@@ -103,6 +103,7 @@ int main(int argc, char* argv[])
 
 					pthread_cancel(deer_thread);
 					pthread_cancel(grain_thread);
+					pthread_cancel(hunter_thread);
 				}
 			}
 		}
