@@ -15,7 +15,7 @@ static const int NUM_COMPUTE_THREADS = 3;
 void* entity_start_thread(void *ptr)
 {
 	// Not using a smart ptr since this object cannot be freed when scoped out
-	EntityThread* argument  = reinterpret_cast<EntityThread*>(ptr);
+	EntityThread* argument = reinterpret_cast<EntityThread*>(ptr);
 	argument->run();
 	
 	pthread_exit(NULL);
