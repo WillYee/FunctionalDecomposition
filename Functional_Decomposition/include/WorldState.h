@@ -23,7 +23,7 @@ public:
 		FEBRUARY  = 1,
 		MARCH     = 2,
 		APRIL	  = 3,
-		MAY		  = 4,
+		MA	  = 4,
 		JUNE	  = 5,
 		JULY	  = 6,
 		AUGUST    = 7,
