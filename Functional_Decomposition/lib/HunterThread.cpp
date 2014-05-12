@@ -1,7 +1,7 @@
 #include "../include/HunterThread.h"
 #include <iostream>
 const double HunterThread::HUNTER_KILL_CHANCE = 0.3333;
-const int	 HunterThread::HUNTER_KILL_LIMIT = 4;
+const int    HunterThread::HUNTER_KILL_LIMIT = 4;
 const int    HunterThread::HUNTER_MIN_RAND = 0;
 const int    HunterThread::HUNTER_MAX_RAND = 1000;
 
